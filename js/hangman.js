@@ -22,22 +22,23 @@ function randomWord() {
 function generateButtons() {
     let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
         `
-      <button
-        class="btn btn-lg btn-primary m-2"
-        id='` + letter + `'
-        onClick="handleGuess('` + letter + `')"
-      >
-        ` + letter + `
-      </button>
-    `).join('');
+          <button
+            class="btn btn-lg btn-primary m-2"
+            id='${letter}'
+            onClick="handleGuess('${letter}')"
+          >
+            ${letter}
+          </button>
+        `
+    ).join('');
 
-    document.getElementById('keyboard').innerHTML = buttonsHTML;
+    $('#keyboard').html(buttonsHTML); // Uso de jQuery para el teclado
 }
 
 function handleGuess(chosenLetter) {
     if (guessed.indexOf(chosenLetter) === -1) {
         guessed.push(chosenLetter);
-        $('#' + chosenLetter).attr('disabled', true); // Uso de jQuery
+        $('#' + chosenLetter).attr('disabled', true); // Uso de jQuery para habilitación y deshabilitación de teclas utilizadas
     }
 
     if (answer.indexOf(chosenLetter) >= 0) {
@@ -57,14 +58,14 @@ function updateHangmanPicture() {
 
 function checkIfGameWon() {
     if (wordStatus === answer) {
-        document.getElementById('keyboard').innerHTML = 'Ganaste!!!';
+        $('#keyboard').html('Ganaste!!!'); // Uso de jQuery para chequear si ganó
     }
 }
 
 function checkIfGameLost() {
     if (mistakes === maxWrong) {
-        document.getElementById('wordSpotlight').innerHTML = 'La respuesta era: ' + answer;
-        document.getElementById('keyboard').innerHTML = 'Perdiste!!!';
+        $('#wordSpotlight').html('La respuesta era: ' + answer);
+        $('#keyboard').html('Perdiste!!!'); // Uso de jQuery para chequear si perdió
     }
 }
 
@@ -75,7 +76,7 @@ function guessedWord() {
 }
 
 function updateMistakes() {
-    document.getElementById('mistakes').innerHTML = mistakes;
+    $('#mistakes').text(mistakes); // Uso de jQuery para actualizar cantidad de errores
 }
 
 function reset() {
