@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos/cards.css">
     <link rel="stylesheet" href="estilos/styles.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Ahorcado</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="index.html"><h1>Facundo Carrizo</h1></a>
-        <a href="educacion.html">Educación</a>
-        <a href="experiencia.html">Experencia</a>
-        <a href="competencias.html">Competencias</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="datosPersonales.html">Contacto</a> 
-    </nav>
-    
     <div class="container">
         <h1 class="text-center">Ahorcado</h1>
         <div class="float-right">Errores: <span id='mistakes'>0</span> de <span id='maxWrong'></span></div>
         <div class="text-center">
-          <img id='hangmanPic' src="./img/0.jpg" alt="">
-          <p>Adivina los lenguajes de programación que sabe Facundo:</p>
-          <p id="wordSpotlight">El lenguaje a adivinar va aca</p>
-          <div id="keyboard"></div>
-          <button class="btn btn-info" onClick="reset()">Reset</button>
-        </div> 
-      </div>
-      
-      <script src='./js/hangman.js'></script>
-    
+            <img id='hangmanPic' src="./img/0.jpg" alt="">
+            <p>Adivina las palabras clave sobre educación vial:</p>
+            <p id="wordSpotlight">La palabra a adivinar va aca</p>
+            <div id="keyboard"></div>
+            <button class="btn btn-info" onClick="reset()">Reset</button>
+        </div>
+    </div>
+
+    <script src='./js/hangman.js'></script>
+
 </body>
+
 </html>
